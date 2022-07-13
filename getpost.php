@@ -1,10 +1,3 @@
-<?php
-
-
-
-
-
-?>
 
 
 <!DOCTYPE html>
@@ -56,18 +49,39 @@
 </nav> 
 
 
+
+<?php
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+
+
+
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> Your email '.$email.' and password '.$password.'
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>';
+
+}
+
+
+
+?>
+
+
 <div class="container">
 
-
-<form action="/myphpfiles/getpost.php">
+ 
+<form action="/myphpfiles/getpost.php" method="POST">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" class="form-control" id="exampleInputEmail1 " name="email" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
   </div>
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -78,6 +92,6 @@
 
 </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
